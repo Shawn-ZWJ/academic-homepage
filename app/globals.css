@@ -108,6 +108,7 @@ a {
 
 .hero {
   position: relative;
+  isolation: isolate;
   min-height: max(780px, 100svh);
   overflow: hidden;
   padding: 154px 7vw 48px;
@@ -129,6 +130,7 @@ a {
 
 .hero-kicker {
   position: absolute;
+  z-index: 4;
   top: 146px;
   right: 4vw;
   display: flex;
@@ -142,17 +144,29 @@ a {
 
 .hero-portrait {
   position: absolute;
-  z-index: 2;
-  top: 17%;
-  right: 7vw;
-  width: clamp(230px, 22vw, 350px);
-  height: min(56vh, 540px);
-  min-height: 420px;
+  z-index: 1;
+  top: 76px;
+  right: -2vw;
+  bottom: 0;
+  width: min(48vw, 680px);
+  height: auto;
+  min-height: 0;
   margin: 0;
   overflow: hidden;
-  border: 1px solid rgba(241, 238, 230, 0.35);
-  background: #07576d;
-  box-shadow: 0 28px 70px rgba(2, 7, 18, 0.32);
+  background: transparent;
+  opacity: 0.9;
+  -webkit-mask-image: radial-gradient(
+    ellipse 72% 76% at 59% 40%,
+    #000 48%,
+    rgba(0, 0, 0, 0.82) 66%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 72% 76% at 59% 40%,
+    #000 48%,
+    rgba(0, 0, 0, 0.82) 66%,
+    transparent 100%
+  );
 }
 
 .hero-portrait::after {
@@ -160,8 +174,8 @@ a {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(to bottom, transparent 58%, rgba(16, 23, 42, 0.6)),
-    linear-gradient(120deg, rgba(16, 23, 42, 0.08), transparent 45%);
+    linear-gradient(to left, transparent 54%, rgba(16, 23, 42, 0.76) 100%),
+    linear-gradient(to top, rgba(16, 23, 42, 0.96), transparent 38%);
   content: "";
 }
 
@@ -169,26 +183,17 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 18%;
-  filter: saturate(0.86) contrast(1.03);
+  object-position: center 20%;
+  filter: saturate(0.56) contrast(1.06) brightness(0.88);
   transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-portrait:hover img {
-  transform: scale(1.025);
+  transform: scale(1.012);
 }
 
 .hero-portrait figcaption {
-  position: absolute;
-  z-index: 1;
-  right: 16px;
-  bottom: 14px;
-  left: 16px;
-  display: flex;
-  justify-content: space-between;
-  color: rgba(241, 238, 230, 0.8);
-  font-size: 8px;
-  letter-spacing: 0.15em;
+  display: none;
 }
 
 .eyebrow,
@@ -276,14 +281,14 @@ a {
 
 .orbit {
   position: absolute;
-  z-index: 1;
-  top: 30%;
-  right: -6vw;
-  width: 26vw;
-  height: 26vw;
+  z-index: 2;
+  top: 26%;
+  right: -3vw;
+  width: 30vw;
+  height: 30vw;
   min-width: 300px;
   min-height: 300px;
-  border: 1px solid rgba(241, 238, 230, 0.14);
+  border: 1px solid rgba(241, 238, 230, 0.2);
   border-radius: 50%;
   animation: slow-spin 28s linear infinite;
 }
@@ -291,7 +296,7 @@ a {
 .orbit::before,
 .orbit::after {
   position: absolute;
-  border: 1px solid rgba(241, 238, 230, 0.12);
+  border: 1px solid rgba(241, 238, 230, 0.18);
   border-radius: 50%;
   content: "";
 }
@@ -304,7 +309,7 @@ a {
   inset: 35%;
   background: var(--signal);
   border: 0;
-  opacity: 0.72;
+  opacity: 0.78;
 }
 
 .orbit span {
@@ -927,10 +932,11 @@ footer a {
   }
 
   .hero-portrait {
-    top: 25%;
-    right: 5vw;
-    width: clamp(220px, 31vw, 290px);
-    height: 430px;
+    top: 76px;
+    right: -9vw;
+    bottom: 80px;
+    width: 62vw;
+    height: auto;
     min-height: 0;
   }
 
@@ -951,8 +957,10 @@ footer a {
   }
 
   .orbit {
-    top: 48%;
-    right: -24vw;
+    top: 31%;
+    right: -16vw;
+    width: 46vw;
+    height: 46vw;
   }
 
   .practice-visual {
@@ -1027,10 +1035,36 @@ footer a {
   }
 
   .hero-portrait {
-    top: 395px;
-    right: 14vw;
-    width: 72vw;
-    height: 420px;
+    top: 330px;
+    right: -18vw;
+    bottom: auto;
+    width: 132vw;
+    height: 600px;
+    opacity: 0.82;
+    -webkit-mask-image: radial-gradient(
+      ellipse 60% 74% at 52% 40%,
+      #000 48%,
+      rgba(0, 0, 0, 0.78) 68%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 60% 74% at 52% 40%,
+      #000 48%,
+      rgba(0, 0, 0, 0.78) 68%,
+      transparent 100%
+    );
+  }
+
+  .hero-portrait::after {
+    background:
+      linear-gradient(to top, rgba(16, 23, 42, 0.98), transparent 45%),
+      linear-gradient(
+        to right,
+        rgba(16, 23, 42, 0.52),
+        transparent 30%,
+        transparent 72%,
+        rgba(16, 23, 42, 0.42)
+      );
   }
 
   .hero-intro {
@@ -1038,8 +1072,10 @@ footer a {
   }
 
   .orbit {
-    top: 48%;
-    right: -52vw;
+    top: 45%;
+    right: -42vw;
+    width: 92vw;
+    height: 92vw;
   }
 
   .practice-visual {
