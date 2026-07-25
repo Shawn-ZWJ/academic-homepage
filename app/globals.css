@@ -151,9 +151,9 @@ a {
   aspect-ratio: 0.76;
   margin: 0;
   overflow: hidden;
-  border-radius: 44% 44% 18px 18px;
-  background: rgba(241, 238, 230, 0.08);
-  box-shadow: 0 24px 60px rgba(3, 8, 19, 0.24);
+  border-radius: 3px;
+  background: transparent;
+  box-shadow: 0 18px 44px rgba(3, 8, 19, 0.2);
 }
 
 .hero-portrait::after {
