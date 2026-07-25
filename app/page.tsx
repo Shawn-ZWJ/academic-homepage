@@ -85,6 +85,9 @@ const education = [
 ];
 
 export default function Home() {
+  const assetBase =
+    process.env.GITHUB_ACTIONS === "true" ? "/academic-homepage" : "";
+
   return (
     <main>
       <header className="site-header">
@@ -106,6 +109,17 @@ export default function Home() {
           <span>高校学生工作实践者</span>
           <span>AI 应用探索者</span>
         </div>
+
+        <figure className="hero-portrait reveal delay-2">
+          <img
+            src={`${assetBase}/wenjing-portrait.jpg`}
+            alt="钟文精个人肖像"
+          />
+          <figcaption>
+            <span>WENJING ZHONG</span>
+            <span>PORTRAIT · 01</span>
+          </figcaption>
+        </figure>
 
         <div className="hero-title reveal delay-1">
           <p className="eyebrow">WENJING ZHONG</p>
@@ -159,6 +173,27 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </section>
+
+      <section className="practice-visual" aria-label="教育实践现场">
+        <figure>
+          <img
+            src={`${assetBase}/education-practice.jpg`}
+            alt="钟文精与同伴在实践现场专注交流"
+          />
+          <div className="practice-copy">
+            <p>PRACTICE / 现场</p>
+            <h2>
+              现场、协作与具体问题，
+              <br />
+              是我理解教育技术的起点。
+            </h2>
+          </div>
+          <figcaption>
+            <span>Education in practice</span>
+            <span>02 / 02</span>
+          </figcaption>
+        </figure>
       </section>
 
       <section className="research section-pad" id="research">
