@@ -190,7 +190,7 @@ export default function Home() {
           <a href="#research">研究</a>
           <a href="#outputs">成果</a>
           <a href="#experience">经历</a>
-          <a href="#credentials">资历</a>
+          <a href="#credentials">证明材料</a>
           <a href="#contact">联系</a>
         </nav>
         <span className="edition">Academic profile · 2026</span>
@@ -398,9 +398,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="experience section-pad" id="experience">
+      <section className="doctoral-intent section-pad">
         <div className="section-label">
           <span>05</span>
+          <p>Doctoral research intent / 博士研究意向</p>
+        </div>
+        <div className="intent-layout">
+          <div className="section-heading">
+            <p>RESEARCH INTENT</p>
+            <h2>
+              希望在导师指导下，继续研究生成式 AI
+              如何服务高校学生发展与教育治理。
+            </h2>
+          </div>
+          <div className="intent-copy">
+            <p className="intent-lead">
+              我的研究兴趣来自高校学生工作的一线问题，重点关注大语言模型、知识图谱和智能体如何进入学生支持与管理流程。
+            </p>
+            <p>
+              现阶段的研究基础仍需要在理论框架、研究设计和实证方法上继续加强。希望通过系统的博士阶段训练，将实践问题转化为更加严谨、可验证的教育技术研究。
+            </p>
+            <div className="intent-topics" aria-label="博士研究兴趣关键词">
+              <span>生成式 AI 与教育治理</span>
+              <span>高校学生发展支持</span>
+              <span>知识图谱与智能体</span>
+              <span>教育技术研究方法</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="experience section-pad" id="experience">
+        <div className="section-label">
+          <span>06</span>
           <p>Experience / 经历</p>
         </div>
         <div className="experience-layout">
@@ -425,7 +455,7 @@ export default function Home() {
 
       <section className="education section-pad">
         <div className="section-label light">
-          <span>06</span>
+          <span>07</span>
           <p>Education / 教育背景</p>
         </div>
         <div className="education-grid">
@@ -449,17 +479,17 @@ export default function Home() {
 
       <section className="credential-archive section-pad" id="credentials">
         <div className="section-label light">
-          <span>07</span>
-          <p>Credentials archive / 教育资历档案</p>
+          <span>08</span>
+          <p>Supporting documents / 学历与资格证明</p>
         </div>
         <div className="archive-intro">
           <div className="section-heading">
             <p>VERIFIED MATERIALS</p>
-            <h2>教育背景、技术能力与教学表达的交叉证明。</h2>
+            <h2>学历、成绩与专业资格的证明材料。</h2>
           </div>
           <div className="archive-note">
             <p>
-              这里呈现的不只是证书本身，也是一条从软件工程、教育技术到高校育人实践的能力路径。
+              供意向导师进一步了解和核验我的教育经历、课程基础与专业资格。
             </p>
             <span>公开版本已隐藏个人编号及验证信息</span>
           </div>
@@ -527,12 +557,11 @@ export default function Home() {
       </section>
 
       <section className="contact section-pad" id="contact">
-        <p className="contact-kicker">ACADEMIC EXCHANGE · COLLABORATION</p>
+        <p className="contact-kicker">DOCTORAL APPLICATION · ACADEMIC EXCHANGE</p>
         <h2>
-          期待与关心
+          如研究方向契合，
           <br />
-          <em>AI 与教育现场</em>
-          的同行交流。
+          <em>期待进一步交流。</em>
         </h2>
         <div className="contact-row">
           <p>
@@ -540,11 +569,16 @@ export default function Home() {
             <br />
             赣南卫生健康职业学院
           </p>
-          <p className="privacy-note">
-            为保护个人隐私，公开版暂不展示私人联系方式。
-            <br />
-            可通过所在单位公开渠道联系。
-          </p>
+          <div className="contact-details">
+            <div>
+              <span>电话 / 微信</span>
+              <a href="tel:+8615170755136">15170755136</a>
+            </div>
+            <div>
+              <span>邮箱</span>
+              <a href="mailto:15170755136@163.com">15170755136@163.com</a>
+            </div>
+          </div>
         </div>
       </section>
 

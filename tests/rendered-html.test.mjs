@@ -39,8 +39,9 @@ test("server-renders the academic profile and credentials archive", async () => 
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>钟文精｜教育技术与人工智能<\/title>/);
-  assert.match(html, /教育资历档案/);
+  assert.match(html, /<title>钟文精｜个人学术履历<\/title>/);
+  assert.match(html, /学历与资格证明/);
+  assert.match(html, /博士研究意向/);
   assert.match(html, /本科成绩单/);
   assert.match(html, /研究生成绩单/);
   assert.match(html, /高职讲师职称证明/);
@@ -48,6 +49,9 @@ test("server-renders the academic profile and credentials archive", async () => 
   assert.match(html, /SYB 讲师证书/);
   assert.match(html, /普通话水平测试等级证书/);
   assert.match(html, /大学英语六级成绩报告单/);
+  assert.match(html, /15170755136/);
+  assert.match(html, /15170755136@163\.com/);
+  assert.doesNotMatch(html, /公开版暂不展示私人联系方式/);
   assert.doesNotMatch(html, /codex-preview|Building your site/);
   assert.doesNotMatch(html, /360727199512200032|20142110010319|1190265005/);
 });

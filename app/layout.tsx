@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const title = "钟文精｜教育技术与人工智能";
+const title = "钟文精｜个人学术履历";
 const description =
-  "钟文精的个人学术主页，关注生成式 AI、高职院校学生工作、教育治理与学生发展支持。";
+  "教育技术与人工智能方向的个人学术履历，涵盖研究兴趣、论文成果、教育经历、证明材料与博士研究意向。";
 const publicSiteUrl = "https://shawn-zwj.github.io/academic-homepage/";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        alt: "钟文精｜教育技术与人工智能",
+        alt: "钟文精｜个人学术履历",
         height: 909,
         url: "og.png",
         width: 1730,
