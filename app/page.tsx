@@ -87,6 +87,7 @@ const education = [
 const publications = [
   {
     year: "2025",
+    dateLabel: "会议年份 2025",
     type: "EI 会议论文",
     title:
       "Construction of a University Student Management Agent Based on Large Language Models and Knowledge Graphs",
@@ -95,6 +96,7 @@ const publications = [
   },
   {
     year: "2021",
+    dateLabel: "发表于 2021",
     type: "期刊论文",
     title: "基于 K-Means 的学生成绩聚类分析与教学方法改进",
     venue: "《教育信息技术》",
@@ -102,6 +104,7 @@ const publications = [
   },
   {
     year: "2020",
+    dateLabel: "会议年份 2020",
     type: "会议论文",
     title: "基于卷积神经网络的课堂声音识别方法研究",
     venue: "第十九届教育技术国际论坛",
@@ -324,12 +327,16 @@ export default function Home() {
         <div className="work-grid">
           <article className="featured-work">
             <div className="work-meta">
-              <span>主持项目</span>
-              <span>教育技术 × 机器学习</span>
+              <span>既往课题 · 研究生阶段</span>
+              <span>主持 · 教育技术 × 机器学习</span>
             </div>
             <h2>卷积神经网络在课堂声音识别中的应用研究</h2>
             <p>
               主持江西省研究生创新基金项目，尝试将深度学习方法应用于课堂声音识别，在真实教育情境中连接算法、数据与教学问题。
+            </p>
+            <p className="work-context">
+              该课题属于研究生阶段的早期探索，不代表当前研究重点；现阶段更关注生成式
+              AI、知识图谱与高校学生发展支持。
             </p>
           </article>
           <div className="metrics">
@@ -356,6 +363,10 @@ export default function Home() {
           <div className="section-heading outputs-heading">
             <p>SELECTED OUTPUTS</p>
             <h2>把教育现场的问题，转化为可验证、可复用的成果。</h2>
+            <p className="outputs-context">
+              成果按时间倒序排列。2020—2021
+              年的研究记录了研究生阶段的方法探索；当前研究重点见“博士研究意向”。
+            </p>
           </div>
           <div>
             <div className="output-group-heading">
@@ -371,6 +382,7 @@ export default function Home() {
                   </div>
                   <div className="publication-copy">
                     <div className="publication-meta">
+                      <span className="publication-date">{item.dateLabel}</span>
                       <span>{item.type}</span>
                       <span>{item.authorship}</span>
                     </div>

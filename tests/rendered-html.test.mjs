@@ -42,6 +42,10 @@ test("server-renders the academic profile and credentials archive", async () => 
   assert.match(html, /<title>钟文精｜个人学术履历<\/title>/);
   assert.match(html, /学历与资格证明/);
   assert.match(html, /博士研究意向/);
+  assert.match(html, /既往课题 · 研究生阶段/);
+  assert.match(html, /发表于 2021/);
+  assert.match(html, /会议年份 2020/);
+  assert.match(html, /当前研究重点见“博士研究意向”/);
   assert.match(html, /本科成绩单/);
   assert.match(html, /研究生成绩单/);
   assert.match(html, /高职讲师职称证明/);
