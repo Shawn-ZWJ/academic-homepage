@@ -114,6 +114,58 @@ const softwareWorks = [
   "基于个性化 K-Means 的学生成绩聚类方法软件",
 ];
 
+const transcripts = [
+  {
+    index: "01",
+    title: "本科成绩单",
+    subtitle: "华东交通大学 · 软件工程（+交通运输）",
+    note: "完整课程记录 · 平均学分绩 81.85",
+    image: "undergraduate-transcript.webp",
+  },
+  {
+    index: "02",
+    title: "研究生成绩单",
+    subtitle: "赣南师范大学 · 现代教育技术",
+    note: "教育技术与研究方法课程记录",
+    image: "graduate-transcript.webp",
+  },
+];
+
+const certifications = [
+  {
+    index: "03",
+    title: "软件设计师资格证书",
+    subtitle: "计算机技术与软件专业技术资格（中级）",
+    note: "2017",
+    image: "software-designer-certificate.webp",
+    orientation: "landscape",
+  },
+  {
+    index: "04",
+    title: "SYB 讲师证书",
+    subtitle: "创业培训（SYB）课程师资培训",
+    note: "2025",
+    image: "syb-instructor-certificate.webp",
+    orientation: "landscape",
+  },
+  {
+    index: "05",
+    title: "普通话水平测试等级证书",
+    subtitle: "二级甲等 · 90.7 分",
+    note: "国家语言文字工作委员会",
+    image: "mandarin-certificate.webp",
+    orientation: "landscape",
+  },
+  {
+    index: "06",
+    title: "大学英语六级成绩报告单",
+    subtitle: "CET-6 · 454 分",
+    note: "教育部考试中心",
+    image: "cet6-score-report.webp",
+    orientation: "portrait",
+  },
+];
+
 export default function Home() {
   const assetBase =
     process.env.GITHUB_ACTIONS === "true" ? "/academic-homepage" : "";
@@ -129,6 +181,7 @@ export default function Home() {
           <a href="#research">研究</a>
           <a href="#outputs">成果</a>
           <a href="#experience">经历</a>
+          <a href="#credentials">资历</a>
           <a href="#contact">联系</a>
         </nav>
         <span className="edition">Academic profile · 2026</span>
@@ -379,7 +432,85 @@ export default function Home() {
         <div className="credentials">
           <span>CET-6</span>
           <span>软件设计师（中级）</span>
+          <span>普通话二级甲等</span>
+          <span>SYB 创业培训讲师</span>
           <span>研究生数学建模竞赛三等奖</span>
+        </div>
+      </section>
+
+      <section className="credential-archive section-pad" id="credentials">
+        <div className="section-label light">
+          <span>07</span>
+          <p>Credentials archive / 教育资历档案</p>
+        </div>
+        <div className="archive-intro">
+          <div className="section-heading">
+            <p>VERIFIED MATERIALS</p>
+            <h2>教育背景、技术能力与教学表达的交叉证明。</h2>
+          </div>
+          <div className="archive-note">
+            <p>
+              这里呈现的不只是证书本身，也是一条从软件工程、教育技术到高校育人实践的能力路径。
+            </p>
+            <span>公开版本已隐藏个人编号及验证信息</span>
+          </div>
+        </div>
+
+        <div className="transcript-gallery">
+          {transcripts.map((item) => {
+            const imageUrl = `${assetBase}/credentials/${item.image}`;
+            return (
+              <article className="transcript-card" key={item.title}>
+                <a
+                  className="document-visual transcript-visual"
+                  href={imageUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`查看${item.title}大图`}
+                >
+                  <img src={imageUrl} alt={`${item.title}公开展示版`} loading="lazy" />
+                  <span>VIEW DOCUMENT ↗</span>
+                </a>
+                <div className="document-caption">
+                  <span>{item.index}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.subtitle}</p>
+                  </div>
+                  <p>{item.note}</p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="certificate-heading">
+          <p>PROFESSIONAL CERTIFICATIONS</p>
+          <span>04 SELECTED CREDENTIALS</span>
+        </div>
+        <div className="certificate-gallery">
+          {certifications.map((item) => {
+            const imageUrl = `${assetBase}/credentials/${item.image}`;
+            return (
+              <article className="certificate-card" key={item.title}>
+                <a
+                  className={`document-visual certificate-visual ${item.orientation}`}
+                  href={imageUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`查看${item.title}大图`}
+                >
+                  <img src={imageUrl} alt={`${item.title}公开展示版`} loading="lazy" />
+                  <span>{item.index} ↗</span>
+                </a>
+                <div className="certificate-caption">
+                  <h3>{item.title}</h3>
+                  <p>{item.subtitle}</p>
+                  <span>{item.note}</span>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
