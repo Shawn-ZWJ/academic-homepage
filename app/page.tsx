@@ -84,6 +84,36 @@ const education = [
   },
 ];
 
+const publications = [
+  {
+    year: "2025",
+    type: "EI 会议论文",
+    title:
+      "Construction of a University Student Management Agent Based on Large Language Models and Knowledge Graphs",
+    venue: "ICAIE 2025",
+    authorship: "第一作者 · EI 收录",
+  },
+  {
+    year: "2021",
+    type: "期刊论文",
+    title: "基于 K-Means 的学生成绩聚类分析与教学方法改进",
+    venue: "《教育信息技术》",
+    authorship: "第一作者",
+  },
+  {
+    year: "2020",
+    type: "会议论文",
+    title: "基于卷积神经网络的课堂声音识别方法研究",
+    venue: "第十九届教育技术国际论坛",
+    authorship: "第一作者",
+  },
+];
+
+const softwareWorks = [
+  "基于卷积神经网络的课堂声音识别方法软件",
+  "基于个性化 K-Means 的学生成绩聚类方法软件",
+];
+
 export default function Home() {
   const assetBase =
     process.env.GITHUB_ACTIONS === "true" ? "/academic-homepage" : "";
@@ -97,6 +127,7 @@ export default function Home() {
         <nav aria-label="主导航">
           <a href="#about">关于</a>
           <a href="#research">研究</a>
+          <a href="#outputs">成果</a>
           <a href="#experience">经历</a>
           <a href="#contact">联系</a>
         </nav>
@@ -254,9 +285,60 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="experience section-pad" id="experience">
+      <section className="outputs section-pad" id="outputs">
         <div className="section-label">
           <span>04</span>
+          <p>Publications & software / 论文与软件成果</p>
+        </div>
+        <div className="outputs-layout">
+          <div className="section-heading outputs-heading">
+            <p>SELECTED OUTPUTS</p>
+            <h2>把教育现场的问题，转化为可验证、可复用的成果。</h2>
+          </div>
+          <div>
+            <div className="output-group-heading">
+              <p>论文发表</p>
+              <span>03 PUBLICATIONS</span>
+            </div>
+            <div className="publication-list">
+              {publications.map((item, index) => (
+                <article className="publication-item" key={item.title}>
+                  <div className="publication-index">
+                    <span>0{index + 1}</span>
+                    <p>{item.year}</p>
+                  </div>
+                  <div className="publication-copy">
+                    <div className="publication-meta">
+                      <span>{item.type}</span>
+                      <span>{item.authorship}</span>
+                    </div>
+                    <h3>{item.title}</h3>
+                    <p>{item.venue}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="output-group-heading software-heading">
+              <p>代表性软件著作权</p>
+              <span>02 SELECTED WORKS</span>
+            </div>
+            <div className="software-list">
+              {softwareWorks.map((title, index) => (
+                <article className="software-item" key={title}>
+                  <span>SW · 0{index + 1}</span>
+                  <h3>《{title}》</h3>
+                  <p>软件著作权</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="experience section-pad" id="experience">
+        <div className="section-label">
+          <span>05</span>
           <p>Experience / 经历</p>
         </div>
         <div className="experience-layout">
@@ -281,7 +363,7 @@ export default function Home() {
 
       <section className="education section-pad">
         <div className="section-label light">
-          <span>05</span>
+          <span>06</span>
           <p>Education / 教育背景</p>
         </div>
         <div className="education-grid">
