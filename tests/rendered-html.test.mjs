@@ -5,6 +5,7 @@ import test from "node:test";
 const credentialFiles = [
   "undergraduate-transcript.webp",
   "graduate-transcript.webp",
+  "national-scholarship-certificate.webp",
   "senior-vocational-lecturer-certificate.webp",
   "software-designer-certificate.webp",
   "syb-instructor-certificate.webp",
@@ -48,6 +49,8 @@ test("server-renders the academic profile and credentials archive", async () => 
   assert.match(html, /当前研究重点见“博士研究意向”/);
   assert.match(html, /本科成绩单/);
   assert.match(html, /研究生成绩单/);
+  assert.match(html, /硕士研究生国家奖学金证书/);
+  assert.match(html, /中华人民共和国教育部 · 国家奖学金/);
   assert.match(html, /高职讲师职称证明/);
   assert.match(html, /软件设计师资格证书/);
   assert.match(html, /SYB 讲师证书/);
@@ -57,7 +60,10 @@ test("server-renders the academic profile and credentials archive", async () => 
   assert.match(html, /15170755136@163\.com/);
   assert.doesNotMatch(html, /公开版暂不展示私人联系方式/);
   assert.doesNotMatch(html, /codex-preview|Building your site/);
-  assert.doesNotMatch(html, /360727199512200032|20142110010319|1190265005/);
+  assert.doesNotMatch(
+    html,
+    /360727199512200032|20142110010319|1190265005|SSY202125065/,
+  );
 });
 
 test("ships every privacy-redacted credential image", async () => {

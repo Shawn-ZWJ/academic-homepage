@@ -137,15 +137,23 @@ const transcripts = [
 const certifications = [
   {
     index: "03",
+    title: "硕士研究生国家奖学金证书",
+    subtitle: "中华人民共和国教育部 · 国家奖学金",
+    note: "2021",
+    image: "national-scholarship-certificate.webp",
+    orientation: "landscape",
+    featured: true,
+  },
+  {
+    index: "04",
     title: "高职讲师职称证明",
     subtitle: "思想政治教育 · 中级专业技术资格",
     note: "2024",
     image: "senior-vocational-lecturer-certificate.webp",
     orientation: "portrait",
-    featured: true,
   },
   {
-    index: "04",
+    index: "05",
     title: "软件设计师资格证书",
     subtitle: "计算机技术与软件专业技术资格（中级）",
     note: "2017",
@@ -153,7 +161,7 @@ const certifications = [
     orientation: "landscape",
   },
   {
-    index: "05",
+    index: "06",
     title: "SYB 讲师证书",
     subtitle: "创业培训（SYB）课程师资培训",
     note: "2025",
@@ -161,7 +169,7 @@ const certifications = [
     orientation: "landscape",
   },
   {
-    index: "06",
+    index: "07",
     title: "普通话水平测试等级证书",
     subtitle: "二级甲等 · 90.7 分",
     note: "国家语言文字工作委员会",
@@ -169,7 +177,7 @@ const certifications = [
     orientation: "landscape",
   },
   {
-    index: "07",
+    index: "08",
     title: "大学英语六级成绩报告单",
     subtitle: "CET-6 · 454 分",
     note: "教育部考试中心",
@@ -481,6 +489,7 @@ export default function Home() {
           ))}
         </div>
         <div className="credentials">
+          <span>2021 年硕士研究生国家奖学金</span>
           <span>CET-6</span>
           <span>软件设计师（中级）</span>
           <span>普通话二级甲等</span>
@@ -536,8 +545,8 @@ export default function Home() {
         </div>
 
         <div className="certificate-heading">
-          <p>PROFESSIONAL CERTIFICATIONS</p>
-          <span>05 SELECTED CREDENTIALS</span>
+          <p>AWARDS & PROFESSIONAL CREDENTIALS</p>
+          <span>06 SELECTED DOCUMENTS</span>
         </div>
         <div className="certificate-gallery">
           {certifications.map((item) => {
