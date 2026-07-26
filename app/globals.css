@@ -1001,6 +1001,10 @@ a {
   min-width: 0;
 }
 
+.certificate-card.featured-credential {
+  grid-column: 1 / -1;
+}
+
 .document-visual {
   position: relative;
   display: block;
@@ -1109,6 +1113,10 @@ a {
 .certificate-visual {
   height: clamp(280px, 31vw, 440px);
   padding: 18px;
+}
+
+.featured-credential .certificate-visual {
+  height: clamp(500px, 58vw, 790px);
 }
 
 .certificate-visual img {
@@ -1562,8 +1570,16 @@ footer a {
     grid-template-columns: 1fr;
   }
 
+  .certificate-card.featured-credential {
+    grid-column: auto;
+  }
+
   .certificate-visual {
     height: min(72vw, 420px);
+  }
+
+  .featured-credential .certificate-visual {
+    height: min(118vw, 680px);
   }
 
   .contact {

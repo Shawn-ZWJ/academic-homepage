@@ -5,6 +5,7 @@ import test from "node:test";
 const credentialFiles = [
   "undergraduate-transcript.webp",
   "graduate-transcript.webp",
+  "senior-vocational-lecturer-certificate.webp",
   "software-designer-certificate.webp",
   "syb-instructor-certificate.webp",
   "mandarin-certificate.webp",
@@ -42,6 +43,7 @@ test("server-renders the academic profile and credentials archive", async () => 
   assert.match(html, /教育资历档案/);
   assert.match(html, /本科成绩单/);
   assert.match(html, /研究生成绩单/);
+  assert.match(html, /高职讲师职称证明/);
   assert.match(html, /软件设计师资格证书/);
   assert.match(html, /SYB 讲师证书/);
   assert.match(html, /普通话水平测试等级证书/);
