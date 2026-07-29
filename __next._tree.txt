@@ -1,4 +1,4 @@
-:HL["/academic-homepage/_next/static/chunks/15y_s24ftpx9l.css","style"]
+:HL["/academic-homepage/_next/static/chunks/0ggm5b.93aais.css","style"]
 :HL["/academic-homepage/wenjing-portrait.jpg","image"]
 :HL["/academic-homepage/education-practice.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"Upb9uG3DuxSU6cdmqtwfs"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"N2xEglc-zrIfxUMPeNo8q"}

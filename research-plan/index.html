@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>面向高职学生发展支持的人本教育智能体：设计、交互机制与效果评估｜博士研究计划书</title>
+  <meta name="description" content="Human-Centred Agentic AI for Student Development Support in Vocational Higher Education: Design, Interaction Mechanisms, and Evaluation">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #162131;
+      --soft: #68717d;
+      --paper: #fffefb;
+      --ground: #e7e3da;
+      --line: rgba(22, 33, 49, .14);
+      --accent: #c84c37;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ground);
+      color: var(--ink);
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      line-height: 1.95;
+    }
+    .progress {
+      position: fixed;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+    }
+    .reader-bar {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 13px 5vw;
+      border-bottom: 1px solid rgba(22, 33, 49, .1);
+      background: rgba(247, 244, 237, .94);
+      color: var(--soft);
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 11px;
+      letter-spacing: .08em;
+      backdrop-filter: blur(14px);
+    }
+    .reader-bar strong { color: var(--ink); font-weight: 600; }
+    article {
+      width: min(880px, calc(100% - 48px));
+      margin: 28px auto 72px;
+      padding: clamp(42px, 7vw, 86px);
+      background: var(--paper);
+      box-shadow: 0 22px 70px rgba(16, 23, 35, .14);
+    }
+    .document-eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-family: "PingFang SC", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 46px);
+      font-weight: 600;
+      letter-spacing: -.04em;
+      line-height: 1.35;
+    }
+    .document-subtitle {
+      margin: 22px 0 48px;
+      color: var(--soft);
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-style: italic;
+      line-height: 1.7;
+    }
+    h2 {
+      margin: 58px 0 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      font-size: 26px;
+      line-height: 1.45;
+    }
+    h3 {
+      margin: 36px 0 14px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    p {
+      margin: 0 0 17px;
+      font-size: 15px;
+      text-align: justify;
+    }
+    .keywords {
+      margin: 26px 0 40px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--accent);
+      background: #f3f0e9;
+      font-family: "PingFang SC", sans-serif;
+      font-size: 13px;
+      text-align: left;
+    }
+    .reference {
+      margin-bottom: 10px;
+      padding-left: 26px;
+      text-indent: -26px;
+      color: #3e4855;
+      font-size: 12px;
+      line-height: 1.7;
+      text-align: left;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 34px 0 46px;
+      border: 1px solid var(--line);
+    }
+    table {
+      width: 100%;
+      min-width: 640px;
+      border-collapse: collapse;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 12px;
+      line-height: 1.65;
+    }
+    th, td {
+      padding: 13px 15px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #e8edf0;
+      font-weight: 700;
+    }
+    tr:last-child td { border-bottom: 0; }
+    th:last-child, td:last-child { border-right: 0; }
+    ::selection { background: rgba(200, 76, 55, .18); }
+    @media (max-width: 620px) {
+      .reader-bar { padding: 11px 18px; }
+      article {
+        width: 100%;
+        margin: 0;
+        padding: 38px 22px 64px;
+        box-shadow: none;
+      }
+      h1 { font-size: 30px; }
+      h2 { font-size: 22px; }
+      p { font-size: 14px; line-height: 1.9; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="reader-bar">
+    <strong>博士研究计划书 · 全文</strong>
+    <span>向下滚动阅读</span>
+  </div>
+  <article><p class="document-eyebrow"><strong>博士研究计划</strong></p>
+<h1><strong>面向高职学生发展支持的人本教育智能体：<br>设计、交互机制与效果评估</strong></h1>
+<p class="document-subtitle"><em>Human-Centred Agentic AI for Student Development Support in<br>Vocational Higher Education: Design, Interaction Mechanisms, and Evaluation</em></p>
+<div class="table-wrap"><table><tr><td><strong>申请方向</strong></td><td>Artificial Intelligence in Education / Learning Analytics / HCI</td></tr><tr><td><strong>适用用途</strong></td><td>博士研究计划书（通用版，可按导师方向定制）</td></tr><tr><td><strong>申请人</strong></td><td>钟文精</td></tr><tr><td><strong>版本</strong></td><td>通用修订稿 · 2026年7月</td></tr></table></div>
+<h2><strong>摘要</strong></h2>
+<p>生成式人工智能正由被动问答工具演化为能够感知情境、规划任务、调用知识与工具并持续反馈的智能体系统，但其在高等教育中的应用仍主要集中于课程问答、作业反馈和一般性信息服务。对于兼具学业适应、职业决策、心理与社会支持等复合需求的高职学生，现有系统往往将“回答正确”视为主要目标，较少解释智能体通过何种对话行为影响学生的求助、判断与行动，也缺乏对信任校准、人的能动性以及辅导员监督机制的系统检验。由此，技术可用性尚未自然转化为教育有效性与可持续实施。</p>
+<p>本研究拟提出并验证一个面向高职学生发展支持的人本教育智能体框架。研究以自我决定理论、适应性求助理论、社会性教学线索与人机信任研究为基础，将“系统可供性—对话交互过程—学习者心理机制—发展支持结果—人工监督”纳入统一分析模型。项目采用以设计为基础的混合方法研究，分三个相互递进的研究阶段展开：第一阶段通过学生与辅导员共同设计、关键事件访谈和情境任务分析，建立学生发展支持需求图谱、教育对话行为编码体系和风险分级规则；第二阶段开发具备检索增强、可解释计划、适应性对话策略、用户可控记忆和人工转介功能的原型系统，并通过标准化情境库和专家评价检验其知识可靠性、教育适切性、安全性与公平性；第三阶段在真实高职场景开展多组随机对照研究和纵向实施研究，比较适应性教育智能体、非适应性检索问答系统与常规支持方式的差异，结合交互日志、问卷、访谈与过程数据，识别对话行为、基本心理需要满足、信任校准和适应性求助之间的作用机制。</p>
+<p>本研究的预期贡献包括：从“系统是否有效”推进到“何种智能体行为、通过何种机制、对哪些学生、在何种条件下有效”；形成适用于教育支持场景的对话行为与人机协同分析框架；提供关于人本教育智能体因果效果、边界条件和实施机制的实证证据；并产出可复用的设计原则、评价基准与治理方案。研究将高职院校作为具有代表性的资源约束型高等教育场域，但所形成的理论与方法可迁移至大学学业指导、职业发展和非临床学生支持等更广泛情境。</p>
+<p class="keywords"><strong>关键词：</strong> 教育智能体；人机交互；学习分析；学生发展支持；适应性求助；信任校准</p>
+<h2><strong>一、研究背景与问题提出</strong></h2>
+<p>随着生成式人工智能、学习分析与自然语言交互技术快速进入教育场景，高校学生支持正由“信息查询型服务”转向“过程性学习与发展支持”。现有研究已证明人工智能能够扩展教育服务的可及性与个性化程度，但其教育价值不能仅以回答速度、预测精度或自动化水平衡量；更关键的问题是，系统能否尊重学习者主体性、促进自主决策，并在风险情境下保持透明、可控与可追责[1-5]。</p>
+<p>高职学生发展支持为检验上述问题提供了重要场域。一方面，高职学生在入学适应、专业学习、临床或岗位实习、资格考试、升学与就业选择等方面具有连续且异质的需求；另一方面，辅导员和专业教师需要同时服务大量学生，支持供给容易呈现“事务响应多、个别化诊断少”“问题发生后介入多、过程性支持少”的特征。学生也可能因污名担忧、时间冲突、不了解求助渠道或认为问题“不够严重”而延迟求助。智能体有机会降低首次求助门槛，但如果系统只追求回答流畅，便可能把复杂的发展问题简化为信息推送，甚至在高风险情境中产生不当替代。</p>
+<p>已有人工智能教育研究主要集中于知识问答、智能辅导、学业预测和资源推荐[3-7]。生成式人工智能虽提升了对话的流畅性与任务覆盖面，但也带来幻觉、偏差、过度依赖、隐私泄露及责任边界模糊等问题[8-9]。尤其在高职教育中，学生需求往往同时涉及学习困难、职业规划、实习适应和心理压力；若系统只追求一次性“给答案”，可能削弱学生的反思、求助与自主行动能力。因此，有必要把研究重心由“能否生成答案”转向“何种交互机制能在真实支持情境中促进学生发展”。</p>
+<p>据此，本研究的核心问题不是“能否为高职院校开发一个聊天机器人”，而是：如何设计一种在知识、交互与治理层面均以人为中心的教育智能体，使其在不削弱学生能动性和专业人员责任的前提下，促进适应性求助、审慎决策和持续行动；以及这种作用通过哪些可观察、可检验的交互机制发生。</p>
+<h2><strong>二、文献综述</strong></h2>
+<h3><strong>2.1 从教育聊天机器人到教育智能体</strong></h3>
+<p>早期教育聊天机器人和智能辅导系统多采用规则库、检索式问答或预设教学脚本，优势在于行为边界清晰、结果相对可控，但对开放问题、复杂语境和个体差异的适应能力有限[3-7]。这一阶段的研究主要关注系统可用性、知识正确率和短期学习成绩，对学生为何接受建议、何时形成依赖以及如何把支持转化为自主行动，讨论仍不充分。</p>
+<p>大语言模型显著增强了教育系统的语言理解、内容生成与多轮对话能力，使智能体能够覆盖学习解释、任务规划、反馈生成和情绪性回应等场景。与此同时，研究也指出其回答可能出现事实错误、价值偏差、引用失真与不恰当替代教师判断等风险[8-9]。因此，本研究不以训练通用大模型为目标，而以成熟模型为技术底座，重点研究其上层交互机制、证据约束和教育效果。</p>
+<h3><strong>2.2 教育对话行为与社会性交互线索</strong></h3>
+<p>对话行为研究为教育智能体的机制分析提供了可操作的中层框架。相关研究表明，提问、澄清、提示、解释、反馈、反思邀请与行动确认等对话行为，并非只是语言形式差异，而可能影响学习者的认知投入、求助方式及后续学习行为[10-12]。本研究据此把“对话行为序列”设为连接系统设计与学生发展结果的关键机制变量。</p>
+<p>礼貌策略并非单纯的表达美化。教学代理研究发现，恰当的礼貌表达能够影响学习者的社会性知觉、投入和学习表现，但过度顺从或迎合也可能遮蔽不确定性、降低批判性判断[13-14]。本研究将区分尊重、共情确认、建议强度与不确定性提示，考察不同策略在不同风险和任务情境中的边界条件。</p>
+<h3><strong>2.3 学生求助、心理需要与能动性</strong></h3>
+<p>适应性求助是自我调节学习的重要组成部分，核心不在于“是否求助”，而在于学习者能否识别困难、提出有效请求、利用提示继续独立解决问题[15-17]。如果智能体直接给出完整答案，短期上可能提高任务完成率，却可能压缩学习者诊断问题和形成策略的机会。因此，本研究把适应性求助和行动转化作为比满意度更关键的教育结果变量。</p>
+<p>自我决定理论认为，自主、胜任与关系是促进高质量动机和持续投入的基本心理需要[18]。据此，人本教育智能体不应通过强制、操控或替代决策来追求表面效率，而应提供可选择的支持方式、可理解的理由和适度的能力支架。本研究将自主支持感、胜任感与关系感作为解释交互策略作用的重要心理机制。</p>
+<h3><strong>2.4 人机信任、透明度与人工监督</strong></h3>
+<p>自动化信任研究强调，目标并非让用户“尽可能信任”系统，而是形成与系统能力相匹配的适当依赖[19-20]。教育智能体需要在给出建议的同时呈现证据、置信边界与人工求助入口，使学生能够校验、拒绝或修正建议。因此，本研究将信任校准而非一般信任作为核心评价指标之一。</p>
+<p>人本人工智能强调以人的福祉、能动性和可控性约束技术设计；教育人工智能伦理研究进一步提出透明、公平、隐私、安全和责任等要求[2,21-27]。本研究将这些原则转化为可实现、可观察的设计要求，包括来源呈现、不确定性表达、可撤回授权、偏差检查、危机升级和人工复核机制，避免伦理原则停留在口号层面。</p>
+<h3><strong>2.5 文献缺口与本研究切入点</strong></h3>
+<p>综上，现有研究尚未形成连接智能体设计、教育对话过程、学生心理机制与长期发展结果的完整证据链。本研究拟填补以下缺口：</p>
+<p>其一，从课程知识问答扩展到非临床学生发展支持，研究跨学业适应、职业探索和行动规划的连续任务，同时明确排除危机处置、疾病诊断和心理治疗等不适合由智能体承担的领域。</p>
+<p>其二，从总体效果比较推进到交互机制识别，将对话行为、主动程度、礼貌—直接性变化、解释与确认等纳入可操纵或可编码的设计变量。</p>
+<p>其三，从“使用意愿”推进到适应性求助、决策准备度、行动完成、自主性与信任校准等更具教育意义的结果变量。</p>
+<p>其四，从单一人机交互推进到“学生—智能体—辅导员”的人机协同系统，检验风险分级、人工转介和专业监督的边界与实施条件。</p>
+<h2><strong>三、研究目标、研究问题与假设</strong></h2>
+<h3><strong>3.1 总体目标</strong></h3>
+<p>本研究旨在构建并实证检验一个面向高职学生发展支持的人本教育智能体框架，揭示智能体的对话策略如何通过基本心理需要满足、信任校准和适应性求助影响学生的发展支持结果，并形成可迁移的系统设计原则、评价方法和人机协同治理方案。</p>
+<h3><strong>3.2 研究问题</strong></h3>
+<p><strong>RQ1：</strong> 高职学生在学业适应、职业探索和校园生活中的关键支持任务、求助障碍与风险边界是什么？学生和辅导员对教育智能体的控制权、透明度、记忆与转介有何需求？</p>
+<p><strong>RQ2：</strong> 在学生发展支持对话中，哪些对话行为及其序列模式与高质量问题界定、反思、适应性求助和行动计划相关？这些模式如何随任务阶段、学生特征和风险等级变化？</p>
+<p><strong>RQ3：</strong> 与非适应性检索问答系统和常规支持方式相比，采用适应性对话策略与人本控制机制的教育智能体能否提高学生的适应性求助、决策准备度和行动完成度？</p>
+<p><strong>RQ4：</strong> 基本心理需要满足与信任校准是否构成教育智能体影响学生结果的中介机制？AI素养、初始自我效能、任务复杂度和支持风险是否构成边界条件？</p>
+<p><strong>RQ5：</strong> 在真实实施中，学生、智能体与辅导员应如何分配信息、建议、决策与处置责任？哪些人工转介与监督机制能够兼顾可扩展性、安全性和专业责任？</p>
+<h3><strong>3.3 待检验假设</strong></h3>
+<p><strong>H1：</strong> 适应性教育智能体组在适应性求助、决策准备度和行动完成度上的改善将显著高于非适应性检索问答组和常规支持组。</p>
+<p><strong>H2：</strong> 适应性对话策略对学生结果的影响将部分通过自主、胜任与关系需要满足以及信任校准产生。</p>
+<p><strong>H3：</strong> 促进性追问、依据说明、理解确认和渐进式提示与更高质量的行动计划正相关；直接给出答案、缺少依据的肯定和过度主动代理与依赖性求助正相关。</p>
+<p><strong>H4：</strong> 人工转介的可见性和用户可控记忆将降低感知风险并提高校准信任，但其效果将受到任务风险、既有AI素养和初始求助倾向调节。</p>
+<h2><strong>四、概念框架</strong></h2>
+<p>本研究提出“人本教育智能体支持机制模型”。该模型包含五个相互关联的层次。</p>
+<p>第一层是<strong>系统可供性</strong>，包括知识可追溯性、目标与计划透明度、适应性对话策略、用户可控记忆、风险识别与人工转介。第二层是<strong>交互过程</strong>，包括学生与智能体的对话行为、轮次结构、主动权转换、礼貌—直接性变化、解释与确认。第三层是<strong>心理机制</strong>，包括自主、胜任和关系需要满足，认知投入、感知风险以及对系统能力与局限的校准信任。第四层是<strong>学生行为与结果</strong>，包括问题界定质量、适应性求助、决策准备度、行动完成、自我调节和后续人工求助。第五层是<strong>情境与治理条件</strong>，包括任务风险、学生差异、数据权限、辅导员工作流程和组织责任。</p>
+<p>模型的基本逻辑为：系统可供性并不直接决定教育结果，而是通过塑造具体的对话过程影响学生的心理需要与信任判断，继而改变求助和行动；风险与个体差异决定某一策略的适用边界；人工监督既是安全机制，也是影响学生如何理解系统角色的重要交互因素。</p>
+<h2><strong>五、研究设计与方法</strong></h2>
+<h3><strong>5.1 研究范式与总体设计</strong></h3>
+<p>本研究采用设计型研究与混合方法相结合的总体路径。设计型研究适合在真实教育情境中迭代形成可解释、可迁移的设计原则[28]；量化实验用于识别关键交互策略的效果及机制，访谈、课堂或任务观察与日志材料则依据主题分析程序解释效果形成的条件与原因[29]。</p>
+<p>研究坚持四项方法原则：一是先界定教育任务与风险边界，再开发技术；二是同时评价“技术性能”和“教育效应”；三是通过对照与纵向数据增强因果解释；四是将公平、安全、隐私和人工监督作为研究变量，而非部署后的附加检查。</p>
+<h3><strong>5.2 研究场域与参与者</strong></h3>
+<p>拟选择两至三所中国内地高职院校作为研究场域，优先覆盖医药卫生类与综合类高职院校，以避免结论仅反映单一学校文化。参与者包括在校学生、专职辅导员、职业发展或心理健康相关专业人员及教育技术专家。</p>
+<p>研究聚焦三类低至中等风险支持任务：入学与学业适应、职业与升学探索、校园事务和行动计划支持。涉及自伤他伤、严重心理危机、临床诊断、法律裁决、纪律处分决定或重大经济利益的任务不由智能体独立处理；系统仅进行预设风险提示和人工转介，不生成诊断或处置结论。</p>
+<p>所有样本规模均将在正式研究前依据预期效应、组间结构、重复测量次数和脱落率进行统计功效分析。初步规划为：阶段一约招募40—60名学生和20—30名学生工作者；阶段二建立不少于400个经专家审查的标准化支持情境；阶段三招募约240—300名学生进入多组实验，并保留独立样本开展可用性与公平性复核。具体数量将根据先导研究的效应量和可行性调整。</p>
+<h3><strong>5.3 阶段一：需求建模、共同设计与对话行为体系构建</strong></h3>
+<p>阶段一回答RQ1和RQ2。首先通过半结构访谈、关键事件访谈和为期两周的求助日记，识别学生在何种情境下产生支持需求、为何选择或放弃求助、如何判断建议质量。随后组织学生与辅导员共同设计工作坊，围绕智能体角色、主动程度、可接受数据、记忆控制、解释方式和转介节点形成设计方案。</p>
+<p>研究团队将据此构建“学生发展支持任务—资源—风险”本体和情境任务库，并形成教育对话行为初始编码体系。编码类别预计包括问题澄清、情绪承认、目标协商、信息提供、理由解释、促进性追问、渐进提示、理解确认、行动规划、进度回顾、风险提示与人工转介等。两名以上研究者对样本对话独立编码，通过迭代代码本、训练和一致性检验确保可靠性；对于稀有但关键的高风险行为，采用分层抽样和主动学习辅助标注，避免多数类别掩盖关键类别。</p>
+<p>质性资料采用反思性主题分析，同时保留负例与分歧案例。对话资料采用描述统计、序列分析和过程挖掘，比较不同任务、学生特征与结果水平下的行为转移模式。阶段一最终产出需求模型、风险分级规则、对话行为代码本和原型设计要求。</p>
+<h3><strong>5.4 阶段二：原型开发与多维度离线评价</strong></h3>
+<p>阶段二开发人本教育智能体原型。系统不以训练通用大模型为目标，而以可审计的教育支持架构为研究对象，主要模块包括：</p>
+<p><strong>知识与检索模块：</strong> 仅使用经审核的学校制度、培养方案、职业标准和公共服务资源，采用检索增强生成，并在关键建议旁提供来源与有效期。</p>
+<p><strong>任务规划模块：</strong> 将复杂需求分解为问题界定、选项生成、权衡、行动计划与复盘等步骤；向学生展示当前目标和下一步，允许跳过、修改或撤销。</p>
+<p><strong>适应性对话策略模块：</strong> 根据任务阶段、学生反馈和风险水平选择追问、解释、提示、确认或转介等行为；不以最大化对话长度为优化目标。</p>
+<p><strong>用户模型与记忆模块：</strong> 仅在明确同意后保存必要信息，区分会话记忆与长期记忆，提供查看、更正和删除入口，敏感信息默认不持久化。</p>
+<p><strong>安全与人工协同模块：</strong> 对高风险表达和低置信建议触发保守响应、资源提示与人工转介；辅导员仅在授权或安全规则触发时接收必要信息，避免形成不透明监控。</p>
+<p>离线评价使用阶段一形成的标准化情境库，对比至少两种具有代表性的基线系统：通用大语言模型直接回答，以及使用相同知识库但不采用适应性对话策略的检索问答系统。评价维度包括事实一致性、来源可追溯性、任务完成度、教育适切性、行动可行性、对自主性的支持、风险识别、转介恰当性、群体公平和语言可理解性。三名以上具备学生工作、教育技术或相关专业背景的评价者进行盲评，并报告评分者一致性。</p>
+<p>对于高风险与公平性测试，使用成对反事实情境，在保持问题内容不变的情况下改变性别、家庭背景、城乡来源、残障信息等非决定性属性，比较系统建议、语气和资源配置是否出现不合理差异。自动评价仅用于初筛和误差发现，不替代人类专家对教育适切性与安全性的判断。</p>
+<h3><strong>5.5 阶段三：现场实验、机制检验与实施研究</strong></h3>
+<p>阶段三回答RQ3至RQ5。拟开展为期12周的三组随机对照研究，并设置干预结束后4—8周追踪：</p>
+<p><strong>A组：人本适应性教育智能体。</strong> 使用完整的适应性对话、来源解释、用户控制和人工转介功能。</p>
+<p><strong>B组：非适应性检索问答系统。</strong> 使用相同知识来源和基础模型，但以单轮或固定流程提供信息，不进行动态对话策略选择。</p>
+<p><strong>C组：常规支持。</strong> 使用学校现有信息门户、线下咨询和常规辅导员支持。</p>
+<p>随机化可根据学校、年级和初始求助倾向进行分层。主要结果变量为适应性求助、决策准备度和行动完成度；次要结果包括基本心理需要满足、自我效能、感知支持、校准信任、AI依赖、实际人工求助与持续使用。AI素养不仅包括工具操作，也包括理解能力边界、识别偏差、判断证据和承担使用责任[30]；本研究将其作为重要个体差异变量。量表优先选用已有信效度证据的工具，并在研究场域中进行翻译回译、认知访谈和验证性因素分析。行动完成度除自陈外，将在取得同意后以系统任务记录或可验证行为证据衡量。</p>
+<p>主要分析采用意向性分析和多层线性/广义线性混合模型，处理重复测量、学生嵌套于学校以及结果变量分布差异。中介机制通过多层中介模型或结构方程模型检验；个体差异和任务风险的调节效应使用预先指定的交互项。对缺失数据报告缺失机制并采用多重插补或最大似然估计。研究将报告效应量、置信区间和稳健性分析，不仅依赖显著性判断。</p>
+<p>交互日志将依据阶段一代码本进行对话行为分类，并采用序列分析、隐马尔可夫模型或过程挖掘识别典型互动轨迹。研究将把“系统说了什么”与“学生随后做了什么”在时间上连接，检验促进性追问、解释、确认和转介等行为与即时及延迟结果之间的关联。必要时采用微随机试验思想，在不影响安全的低风险节点随机呈现不同对话策略，以增强对局部机制的因果识别。</p>
+<p>现场实验后选取不同使用模式和效果水平的学生及辅导员开展解释性访谈。访谈重点关注系统角色认知、信任变化、未被量化的负面影响、人工转介体验和工作流程变化。通过联合展示表将量化结果、日志模式和质性主题进行三角互证，解释平均效应背后的异质性与实施条件。</p>
+<h3><strong>5.6 变量操作化与证据链</strong></h3>
+<p>本研究建立“设计操纵—过程指标—心理机制—行为结果—实施结果”的证据链。设计操纵包括适应性对话、解释、记忆控制与转介可见性；过程指标包括对话行为分布、行为序列、响应修订、来源查看、计划修改和转介接受；心理机制包括基本心理需要满足、认知投入、感知风险与校准信任；行为结果包括求助质量、决策准备度、计划执行与人工求助；实施结果包括可接受性、可行性、采用持续性、工作量变化和安全事件。</p>
+<p>“校准信任”不以单一的高信任得分衡量，而通过主观信任与系统实际正确性之间的匹配、接受正确建议和拒绝错误建议的辨别表现共同衡量。“适应性求助”则区分促进理解与独立行动的工具性求助、寻求直接答案的执行性求助以及在需要时主动转向专业人员的升级求助。</p>
+<h3><strong>5.7 研究质量控制与开放科学</strong></h3>
+<p>研究将在数据收集前公开研究问题、主要结果、排除规则和分析计划，对探索性分析与验证性分析作出区分。系统提示、模型版本、知识库版本、温度等关键参数将被记录，以应对生成式系统的可重复性问题。质性研究保留审计轨迹、反例与研究者反思；量化研究开展统计功效分析、测量等值性检验和多种稳健性分析。</p>
+<p>在不泄露学生隐私、学校敏感制度和模型安全规则的前提下，计划公开去标识化代码本、合成情境、评价量规、分析代码与系统设计说明。涉及真实对话的数据仅提供受控访问或不可逆聚合结果。</p>
+<h2><strong>六、伦理、安全与数据治理</strong></h2>
+<p>本研究将在拟申请院校及合作研究场域的伦理审批通过后实施。所有参与者均须签署知情同意书；研究数据实行最小化收集、去标识化、分级访问与限期保存。系统不得替代心理危机、医疗、法律或重大纪律事项中的专业判断，并应提供清晰的风险提示、人工转介和紧急升级机制。</p>
+<p>数据治理遵循目的限定、最少必要、分级授权和可撤回原则。身份信息与研究数据分开存储，传输和存储加密；原始对话设定最短必要保留期；参与者可以查看、更正或请求删除可识别数据。用于模型分析的数据进行去标识化，并禁止将研究对话直接用于未经同意的通用模型训练。</p>
+<p>安全治理采用“任务白名单＋风险分级＋人工转介＋事件复核”机制。系统对危机、诊断、纪律裁决和重大利益事项不作独立决定。任何自动风险识别均被视为辅助提示而非诊断，其误报、漏报和群体差异将被持续监测。研究设立停止规则：若出现重复的严重错误建议、隐私事件、显著群体伤害或参与者福祉风险，将暂停相关功能并启动人工审查。</p>
+<h2><strong>七、预期创新与理论贡献</strong></h2>
+<h3><strong>7.1 理论创新</strong></h3>
+<p>本研究将教育智能体研究从“功能—结果”的直接关系扩展为“系统可供性—对话过程—心理机制—行为结果—治理条件”的多层模型，连接AIED、学习科学与人机交互研究。尤其强调校准信任而非最大化信任、适应性求助而非简单增加使用、人的能动性而非任务完全自动化。</p>
+<h3><strong>7.2 方法创新</strong></h3>
+<p>本研究把设计型研究、随机对照、对话行为分类、序列分析和解释性质性研究整合于同一证据链。通过相同基础模型与知识库条件下的组件对照，尽量将“模型更强”与“教育设计更好”区分开；通过标准化情境、反事实公平测试和真实现场数据，建立从离线安全到现场效果的多层评价体系。</p>
+<h3><strong>7.3 设计与实践创新</strong></h3>
+<p>项目将形成面向学生发展支持的智能体架构、对话行为代码本、风险分级与人工转介规则，以及可供高校采用的评价量规。其价值不在于替代辅导员，而在于重新界定机器适合承担的信息整合、低风险练习和连续跟进，以及专业人员必须保留的价值判断、关系支持和高风险处置。</p>
+<h3><strong>7.4 情境与公平贡献</strong></h3>
+<p>既有AIED证据较多来自资源充足的普通高校或单一课程场景。本研究选择高职院校这一学生背景多样、支持资源相对受限的场域，可检验教育智能体是否在数字素养、教育经历和支持可及性不同的群体中产生差异化影响，并避免把平均效果误认为普遍有效。</p>
+<h2><strong>八、可行性与前期基础</strong></h2>
+<p>申请人本科接受软件工程训练，硕士阶段学习现代教育技术，现为高职院校专职辅导员，长期参与学生管理与发展支持，具备进入真实研究场域、理解学生工作流程和协调实践参与者的条件。申请人已围绕大语言模型与知识图谱驱动的大学生管理智能体开展前期研究，相关成果发表于人工智能与教育国际会议[31]。该工作为本研究提供了需求分析、知识组织、原型设计与场景验证基础；博士阶段将进一步把研究重心从“系统能否运行”推进到“交互机制为何有效、对谁有效、在何种条件下有效”。</p>
+<p>与前期工作相比，本博士研究不会停留在系统构建和功能展示，而将重点转向理论驱动的交互设计、严格的比较研究、作用机制识别和伦理治理。申请人的教育实践经验使其能够发现真实需求和实施约束，软件与教育技术背景使其能够与工程研究者协作完成可审计原型；需要在博士阶段重点提升的能力包括心理测量、因果推断、对话数据分析、HCI实验设计和国际学术写作。</p>
+<p>本研究面向人工智能教育、教育技术学、人机交互、学习分析和教育数据科学等相关博士培养方向，核心问题与系统框架保持稳定。在联系不同导师时，可依据其专长对对话机制、学习分析、教育评价或伦理治理模块进行有限度调整，但不改变研究对象、理论主线和主要实证设计，因而具备跨院校申请的适配性。</p>
+<h2><strong>九、研究进度安排</strong></h2>
+<div class="table-wrap"><table><tr><th><strong>阶段</strong></th><th><strong>时间</strong></th><th><strong>主要任务</strong></th><th><strong>预期产出</strong></th></tr><tr><td>第一学年</td><td>第1—12个月</td><td>系统综述；理论模型；场域协商；伦理审批；需求访谈与共同设计；任务与风险本体</td><td>综述论文；需求模型；对话代码本1.0；研究方案预注册</td></tr><tr><td>第二学年</td><td>第13—24个月</td><td>原型开发；情境库建设；专家评价；可用性测试；离线安全与公平测试；小规模先导研究</td><td>原型系统；评价基准；AIED/HCI会议论文；修订后的实验方案</td></tr><tr><td>第三学年</td><td>第25—36个月</td><td>多组随机对照研究；日志与问卷收集；局部对话策略实验；初步机制分析</td><td>现场实验数据集；效果与机制论文；设计原则</td></tr><tr><td>第四学年</td><td>第37—48个月</td><td>追踪与实施访谈；跨场域验证；综合分析；论文整合；开源材料与学位论文写作</td><td>实施研究论文；治理指南；博士学位论文与答辩</td></tr></table></div>
+<h2><strong>十、预期成果</strong></h2>
+<p>研究预期形成四类成果。第一，提出并验证人本教育智能体支持机制模型。第二，形成学生发展支持对话行为代码本、标准化情境库、教育适切性与安全评价量规。第三，开发具备知识追溯、适应性对话、用户可控记忆和人工转介的研究原型。第四，围绕需求与共同设计、对话机制、随机对照效果和实施治理形成系列论文，并将主要成果投稿至AIED、EDM、LAK、CHI/Learning at Scale以及Computers &amp; Education、British Journal of Educational Technology、International Journal of Artificial Intelligence in Education等相关会议和期刊。</p>
+<h2><strong>十一、可能风险与替代方案</strong></h2>
+<p>若多校招募受限，将优先保证单一场域内部的实验控制与纵向质量，并通过独立情境评价者、跨专业学生样本和后续复制研究增强外部效度。若高风险真实案例不足，不以扩大真实风险暴露换取样本，而采用经专家审查的合成情境检验安全边界。若模型或服务接口快速变化，将固定主要实验版本并完整记录参数，同时以组件和行为层描述干预，避免结论依赖单一商业模型。</p>
+<p>若实际效应小于预期，将重点报告置信区间、异质性和过程机制，不以频繁更换结果变量追求显著。若自动对话行为分类在低资源类别上表现不足，将采用主动学习、分层抽样与人工复核相结合的方式，并把分类不确定性纳入后续分析。若系统使用率偏低，将区分“技术不可用”“任务不需要”“信任不足”和“组织流程不支持”等原因，通过实施研究解释低采用，而不把使用次数直接等同于教育价值。</p>
+<h2><strong>参考文献</strong></h2>
+<p class="reference">[1] 吴砥, 李环, 陈旭. 人工智能通用大模型教育应用影响探析[J]. 开放教育研究, 2023, 29(2): 19-25, 45. DOI:10.13966/j.cnki.kfjyyj.2023.02.003.</p>
+<p class="reference">[2] 祝智庭, 韩中美, 黄昌勤. 教育人工智能（eAI）：人本人工智能的新范式[J]. 电化教育研究, 2021, 42(1): 5-15. DOI:10.13811/j.cnki.eer.2021.01.001.</p>
+<p class="reference">[3] ROLL I, WYLIE R. Evolution and revolution in artificial intelligence in education[J]. International Journal of Artificial Intelligence in Education, 2016, 26(2): 582-599. DOI:10.1007/s40593-016-0110-3.</p>
+<p class="reference">[4] ZAWACKI-RICHTER O, MARÍN V I, BOND M, et al. Systematic review of research on artificial intelligence applications in higher education—Where are the educators?[J]. International Journal of Educational Technology in Higher Education, 2019, 16: 39. DOI:10.1186/s41239-019-0171-0.</p>
+<p class="reference">[5] UNESCO. Guidance for Generative AI in Education and Research[R]. Paris: UNESCO, 2023.</p>
+<p class="reference">[6] WOLLNY S, SCHNEIDER J, DI MITRI D, et al. Are we there yet? A systematic literature review on chatbots in education[J]. Frontiers in Artificial Intelligence, 2021, 4: 654924. DOI:10.3389/frai.2021.654924.</p>
+<p class="reference">[7] LABADZE L, GRIGOLIA M, MACHAIDZE L. Role of AI chatbots in education: Systematic literature review[J]. International Journal of Educational Technology in Higher Education, 2023, 20: 56. DOI:10.1186/s41239-023-00426-1.</p>
+<p class="reference">[8] KASNECI E, SESSLER K, KÜCHEMANN S, et al. ChatGPT for good? On opportunities and challenges of large language models for education[J]. Learning and Individual Differences, 2023, 103: 102274. DOI:10.1016/j.lindif.2023.102274.</p>
+<p class="reference">[9] TLILI A, SHEHATA B, ADARKWAH M A, et al. What if the devil is my guardian angel: ChatGPT as a case study of using chatbots in education[J]. Smart Learning Environments, 2023, 10: 15. DOI:10.1186/s40561-023-00237-x.</p>
+<p class="reference">[10] 戴岭, 赵晓伟, 祝智庭. 智慧问学：基于ChatGPT的对话式学习新模式[J]. 开放教育研究, 2023, 29(6): 42-51, 111. DOI:10.13966/j.cnki.kfjyyj.2023.06.005.</p>
+<p class="reference">[11] LIN J, TAN W, NGUYEN N D, et al. Robust educational dialogue act classifiers with low-resource and imbalanced datasets[C]//Artificial Intelligence in Education: AIED 2023. Cham: Springer, 2023: 114-125. DOI:10.1007/978-3-031-36272-9_10.</p>
+<p class="reference">[12] BORCHERS C, YANG K, LIN J, et al. Combining dialog acts and skill modeling: What chat interactions enhance learning rates during AI-supported peer tutoring?[C]//Proceedings of the 17th International Conference on Educational Data Mining. 2024: 117-130.</p>
+<p class="reference">[13] WANG N, JOHNSON W L, MAYER R E, et al. The politeness effect: Pedagogical agents and learning outcomes[J]. International Journal of Human-Computer Studies, 2008, 66(2): 98-112. DOI:10.1016/j.ijhcs.2007.09.003.</p>
+<p class="reference">[14] LIN J, RAKOVIĆ M, LI Y, et al. On the role of politeness in online human-human tutoring[J]. British Journal of Educational Technology, 2024, 55(1): 156-180. DOI:10.1111/bjet.13333.</p>
+<p class="reference">[15] NEWMAN R S. How self-regulated learners cope with academic difficulty: The role of adaptive help seeking[J]. Theory Into Practice, 2002, 41(2): 132-138. DOI:10.1207/s15430421tip4102_10.</p>
+<p class="reference">[16] GUAN R, RAKOVIĆ M, CHEN G, et al. How educational chatbots support self-regulated learning? A systematic review of the literature[J]. Education and Information Technologies, 2025, 30: 4493-4518. DOI:10.1007/s10639-024-12881-y.</p>
+<p class="reference">[17] 戚佳, 徐艳茹, 刘继安, 等. 生成式人工智能工具使用对高校学生批判性思维与自主学习能力的影响[J]. 电化教育研究, 2024, 45(12): 67-74. DOI:10.13811/j.cnki.eer.2024.12.009.</p>
+<p class="reference">[18] RYAN R M, DECI E L. Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being[J]. American Psychologist, 2000, 55(1): 68-78. DOI:10.1037/0003-066X.55.1.68.</p>
+<p class="reference">[19] LEE J D, SEE K A. Trust in automation: Designing for appropriate reliance[J]. Human Factors, 2004, 46(1): 50-80. DOI:10.1518/hfes.46.1.50_30392.</p>
+<p class="reference">[20] PARASURAMAN R, SHERIDAN T B, WICKENS C D. A model for types and levels of human interaction with automation[J]. IEEE Transactions on Systems, Man, and Cybernetics—Part A: Systems and Humans, 2000, 30(3): 286-297. DOI:10.1109/3468.844354.</p>
+<p class="reference">[21] SHNEIDERMAN B. Human-Centered AI[M]. New York: Oxford University Press, 2022.</p>
+<p class="reference">[22] AMERSHI S, WELD D, VORVOREANU M, et al. Guidelines for human-AI interaction[C]//Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems. New York: ACM, 2019: 1-13. DOI:10.1145/3290605.3300233.</p>
+<p class="reference">[23] HOLMES W, PORAYSKA-POMSTA K, HOLSTEIN K, et al. Ethics of AI in education: Towards a community-wide framework[J]. International Journal of Artificial Intelligence in Education, 2022, 32(3): 504-526. DOI:10.1007/s40593-021-00239-1.</p>
+<p class="reference">[24] 王佑镁, 王旦, 梁炜怡, 等. ChatGPT教育应用的伦理风险与规避进路[J]. 开放教育研究, 2023, 29(2): 26-35. DOI:10.13966/j.cnki.kfjyyj.2023.02.004.</p>
+<p class="reference">[25] 吴砥, 吴河江. 通用大模型教育应用的潜在风险及其规避——基于技术伦理的视角[J]. 华东师范大学学报（教育科学版）, 2024, 42(8): 64-75. DOI:10.16382/j.cnki.1000-5560.2024.08.006.</p>
+<p class="reference">[26] NGUYEN A, NGO H N, HONG Y, et al. Ethical principles for artificial intelligence in education[J]. Education and Information Technologies, 2023, 28: 4221-4241. DOI:10.1007/s10639-022-11316-w.</p>
+<p class="reference">[27] BAKER R S, HAWN A. Algorithmic bias in education[J]. International Journal of Artificial Intelligence in Education, 2022, 32(4): 1052-1092. DOI:10.1007/s40593-021-00285-9.</p>
+<p class="reference">[28] DESIGN-BASED RESEARCH COLLECTIVE. Design-based research: An emerging paradigm for educational inquiry[J]. Educational Researcher, 2003, 32(1): 5-8. DOI:10.3102/0013189X032001005.</p>
+<p class="reference">[29] BRAUN V, CLARKE V. Thematic Analysis: A Practical Guide[M]. London: SAGE, 2021.</p>
+<p class="reference">[30] LONG D, MAGERKO B. What is AI literacy? Competencies and design considerations[C]//Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems. New York: ACM, 2020: 1-16. DOI:10.1145/3313831.3376727.</p>
+<p class="reference">[31] ZHONG W, LAN H, SHANG X. Construction of a university student management agent based on large language models and knowledge graphs[C]//Proceedings of the 2025 4th International Conference on Artificial Intelligence and Education. New York: ACM, 2025: 725-730. DOI:10.1145/3797552.3797669.</p></article>
+  <script>
+    const progress = document.querySelector(".progress");
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = `${max > 0 ? (scrollY / max) * 100 : 100}%`;
+    };
+    addEventListener("scroll", updateProgress, { passive: true });
+    addEventListener("resize", updateProgress);
+    updateProgress();
+  </script>
+</body>
+</html>
