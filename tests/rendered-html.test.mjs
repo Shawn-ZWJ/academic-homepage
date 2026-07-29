@@ -43,6 +43,10 @@ test("server-renders the academic profile and credentials archive", async () => 
   assert.match(html, /<title>钟文精｜个人学术履历<\/title>/);
   assert.match(html, /学历与资格证明/);
   assert.match(html, /博士研究意向/);
+  assert.match(html, /博士研究计划书/);
+  assert.match(html, /在线阅读全文/);
+  assert.match(html, /research-plan\/index\.html/);
+  assert.match(html, /documents\/doctoral-research-plan\.docx/);
   assert.match(html, /既往课题 · 研究生阶段/);
   assert.match(html, /发表于 2021/);
   assert.match(html, /会议年份 2020/);
@@ -86,4 +90,22 @@ test("ships every privacy-redacted credential image", async () => {
   assert.match(css, /\.credential-archive/);
   assert.match(css, /\.transcript-gallery/);
   assert.match(css, /\.certificate-gallery/);
+});
+
+test("ships the complete doctoral research-plan reader and download", async () => {
+  const readerPath = new URL("../public/research-plan/index.html", import.meta.url);
+  const documentPath = new URL(
+    "../public/documents/doctoral-research-plan.docx",
+    import.meta.url,
+  );
+
+  await Promise.all([access(readerPath), access(documentPath)]);
+
+  const reader = await readFile(readerPath, "utf8");
+  assert.match(reader, /面向高职学生发展支持的人本教育智能体/);
+  assert.match(reader, /一、研究背景与问题提出/);
+  assert.match(reader, /九、研究进度安排/);
+  assert.match(reader, /参考文献/);
+  assert.match(reader, /addEventListener\("scroll"/);
+  assert.doesNotMatch(reader, /codex-preview|Building your site/);
 });

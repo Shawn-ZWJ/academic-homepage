@@ -200,6 +200,7 @@ export default function Home() {
           <a href="#about">关于</a>
           <a href="#research">研究</a>
           <a href="#outputs">成果</a>
+          <a href="#research-plan">研究计划</a>
           <a href="#experience">经历</a>
           <a href="#credentials">证明材料</a>
           <a href="#contact">联系</a>
@@ -448,9 +449,55 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="experience section-pad" id="experience">
+      <section className="research-plan section-pad" id="research-plan">
         <div className="section-label">
           <span>06</span>
+          <p>Research proposal / 博士研究计划书</p>
+        </div>
+        <div className="research-plan-intro">
+          <div className="section-heading">
+            <p>FULL RESEARCH PROPOSAL</p>
+            <h2>面向高职学生发展支持的人本教育智能体</h2>
+          </div>
+          <div className="research-plan-summary">
+            <p>
+              研究聚焦教育智能体的设计、交互机制与效果评估，尝试回答“何种智能体行为、通过何种机制、对哪些学生、在何种条件下有效”。
+            </p>
+            <span>通用修订稿 · 2026 年 7 月</span>
+          </div>
+        </div>
+        <div className="reader-shell">
+          <div className="reader-toolbar">
+            <div>
+              <span className="reader-status" aria-hidden="true" />
+              <p>在线阅读全文</p>
+              <span>在阅览框内上下滚动</span>
+            </div>
+            <div className="reader-actions">
+              <a
+                href={`${assetBase}/research-plan/index.html`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                独立打开 ↗
+              </a>
+              <a href={`${assetBase}/documents/doctoral-research-plan.docx`} download>
+                下载 Word 版 ↓
+              </a>
+            </div>
+          </div>
+          <iframe
+            className="research-plan-reader"
+            src={`${assetBase}/research-plan/index.html`}
+            title="《面向高职学生发展支持的人本教育智能体》博士研究计划书全文阅览器"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
+      <section className="experience section-pad" id="experience">
+        <div className="section-label">
+          <span>07</span>
           <p>Experience / 经历</p>
         </div>
         <div className="experience-layout">
@@ -475,7 +522,7 @@ export default function Home() {
 
       <section className="education section-pad">
         <div className="section-label light">
-          <span>07</span>
+          <span>08</span>
           <p>Education / 教育背景</p>
         </div>
         <div className="education-grid">
@@ -500,7 +547,7 @@ export default function Home() {
 
       <section className="credential-archive section-pad" id="credentials">
         <div className="section-label light">
-          <span>08</span>
+          <span>09</span>
           <p>Supporting documents / 学历与资格证明</p>
         </div>
         <div className="archive-intro">

@@ -3,7 +3,7 @@ import "./globals.css";
 
 const title = "钟文精｜个人学术履历";
 const description =
-  "教育技术与人工智能方向的个人学术履历，涵盖研究兴趣、论文成果、教育经历、证明材料与博士研究意向。";
+  "教育技术与人工智能方向的个人学术履历，涵盖研究兴趣、论文成果、教育经历、证明材料与博士研究计划书。";
 const publicSiteUrl = "https://shawn-zwj.github.io/academic-homepage/";
 
 export const metadata: Metadata = {
